@@ -7,10 +7,12 @@ const MONGODB_URI = `mongodb://${NOTES_APP_MONGODB_HOST}/${NOTES_APP_MONGODB_DAT
 console.log(MONGODB_URI);
 
 mongoose.Promise = global.Promise; 
- mongoose.connect(MONGODB_URI,
+ /* mongoose.createConnection(MONGODB_URI, */
+mongoose.connect('mongodb+srv://user:user123@telegrom.yqdqq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
 {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex: true
 }) 
 .then(console.log('[db] connected corrrectlly'))
 .catch(err => console.log(err));
