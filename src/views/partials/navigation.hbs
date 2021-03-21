@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+{{!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <ul class="navbar-nav">
         <li class="nav-item active">
             <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
@@ -27,5 +27,18 @@
             <a class="nav-link " href="/users/signUp">Registrarse</a>
         </li>
         {{/if}}
+    </ul>
+</nav>
+--}}
+<nav>
+    <span class="nav-titulo" href="/">Feno<span>Keep</span></span>
+    <div class="nav-items">
+        {{#if user}}
+        <a class="" href="/users/logout">Cerrar sesión</a>
+        {{else}}
+        <a class="" href="/users/signIn">Entrar</a>
+        <a class="" href="/users/signUp">Registrarse</a>
+        {{/if}}
+    </div>
     </ul>
 </nav>

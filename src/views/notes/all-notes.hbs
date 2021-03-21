@@ -1,4 +1,4 @@
-<div class="row">
+{{!-- <div class="row">
     {{#each notes}}
     <div class="col-lg 3">
         <div class="card">
@@ -16,4 +16,55 @@
     </div>
     {{/each}}
 </div>
-<a href="/notes/add">Add</a>
+<a href="/notes/add">Add</a> --}}
+
+<section class="section-notes">
+    <div class="container-header-notas">
+        <H1>Mis notas</H1>
+        <input type="text" class="buscador" placeholder="Buscar una nota...">
+    </div>
+    <div class="notes">
+
+        {{#each notes}}
+        <div class="note">
+            <div class="">
+                <h2 class="">{{title}}
+                    {{!-- <a href="notes/edit/{{_id}}"><i class="fa fa-pencil"></a></i> --}}
+                    <div class="container-options">
+                        <div class="circulo"></div>
+                        <div class="circulo"></div>
+                        <div class="circulo"></div>
+                    </div>
+                </h2>
+                <p>{{description}}</p>
+                <!-- <form action="notes/delete/{{_id}}?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value='DELETE'>
+                        <button type="submit">Delete </button>
+                    </form> -->
+            </div>
+        </div>
+        {{/each}}
+
+
+    </div>
+</section>
+
+<aside class="aside-main">
+    <h1>Nueva nota</h1>
+
+    <form class="" action="new-note" method="POST">
+        <div class="">
+            <label for="exampleInputEmail1">Título</label>
+            <input type="text" name='title' class="" placeholder="Titulo...">
+        </div>
+        <div class="input-note">
+            <label for="exampleInputPassword1">Contenido</label>
+            <textarea name="description">Contenido</textarea>
+        </div>
+        <div class="container-button">
+            <a href="/notes/add">
+                <button type="submit" class="">Añadir</button>
+            </a>
+        </div>
+    </form>
+</aside>
