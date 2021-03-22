@@ -30,15 +30,12 @@
     </ul>
 </nav>
 --}}
+{{#if user}}
 <nav>
     <span class="nav-titulo" href="/">Feno<span>Keep</span></span>
     <div class="nav-items">
-        {{#if user}}
         <a class="" href="/users/logout">Cerrar sesión</a>
-        {{else}}
-        <a class="" href="/users/signIn">Entrar</a>
-        <a class="" href="/users/signUp">Registrarse</a>
-        {{/if}}
     </div>
     </ul>
 </nav>
+{{/if}}

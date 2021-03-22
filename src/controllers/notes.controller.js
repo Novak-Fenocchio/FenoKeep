@@ -10,11 +10,12 @@ notesCtrl.renderNoteForm = (req, res)=>
 
 notesCtrl.createNewNote = async (req, res)=>
 {   
+    console.log('yesaa');
     const {title, description} = req.body;
     console.log(req.user.id);
     const newNote = new Note({title: title, description: description, user: req.user.id});
     await newNote.save();
-    res.redirect('/notes');
+    res.redirect('/notes'); 
 }
 
 /* get all notes */
