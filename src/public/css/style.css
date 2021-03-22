@@ -12,17 +12,20 @@ textarea:focus {
 }
 /* Nav */
 nav {
-  background-color: #1221a8;
-  color: white;
+  background-color: white;
+  border-bottom: 2px solid #c63636;
+  color: #c63636;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1.5vw;
-  padding-right: 31vw;
-  padding-left: 1vw;
+  padding-right: 3vw;
+  padding-left: 3vw;
+  padding-bottom: 0.5vw;
 }
 nav a {
-  color: white;
+  color: #c63636;
+  font-weight: bold;
   text-decoration: none;
   list-style: none;
   margin-left: 1vw;
@@ -37,8 +40,11 @@ nav a {
   font-weight: bold;
 }
 .nav-items {
+  display: flex;
+  justify-content: space-between;
   text-align: right;
   padding: 1vw;
+  padding-top: 1.6vw;
 }
 /* Login */
 .container-login {
@@ -107,14 +113,16 @@ nav a {
   color: #1a2aba;
   text-align: center;
 }
-
+.section-notes {
+  padding: 0.5vw 2vw;
+}
 /* Notes */
 .notes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 1vw;
-  margin: 1vw 2vw 0vw 2vw;
-  width: 65%;
+  margin: 2vw auto 0vw auto;
+  width: 80%;
 }
 .note {
   border: 1px solid #cecece;
@@ -123,28 +131,13 @@ nav a {
   padding: 0.5vw 1vw;
 }
 .note h2 {
-  color: #1a2aba;
+  color: #7c0000;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .note p {
   margin: 1vw 0 1vw;
-}
-
-.note button {
-  background-color: #1a2aba;
-  border: 2px solid #1a2aba;
-  border-radius: 5px;
-  color: white;
-  font-size: 1.2vw;
-  padding: 0.3vw 1vw;
-  width: 50%;
-}
-.note button:hover {
-  background-color: #1221a8;
-  border: 2px solid #1221a8;
-  transform: scale(1.1);
 }
 
 /* aside main */
@@ -213,29 +206,106 @@ nav a {
   display: flex;
   justify-content: space-between;
   font-size: 1.7vw;
-  padding: 1vw 33vw 0vw 2vw;
+  margin: 0.5vw auto 0vw;
+  width: 90%;
 }
 .container-header-notas input[type="text"] {
-  background-color: #efefef;
-  border: 2px solid #efefef;
+  background-color: #f0f2ff;
+  border: 2px solid #f0f2ff;
   border-radius: 10px;
-  font-size: 1.5vw;
+  font-size: 1.7vw;
+  padding: 0;
   padding-left: 1vw;
-  width: 60%;
+  width: 40%;
 }
 .container-header-notas input[type="text"]:focus {
   outline: none;
 }
 /* Circulos */
 .container-options {
-  display: flex;
-  justify-content: space-between;
-  margin: 2px;
-  width: 3vw;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2vw;
+  width: 100%;
+}
+.container-options:hover {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+}
+.container-options i {
+  color: #ff7373;
+  font-size: 0.7vw;
 }
 .circulo {
   background-color: #1a2aba;
   border-radius: 5px;
-  height: 8px;
-  width: 8px;
+  height: 32px;
+  width: 32px;
+}
+.container-options-buttons {
+  background-color: #ffffff;
+  border: 1px solid rgb(201, 201, 201);
+  border-radius: 10px;
+  display: none;
+  font-size: 1.3vw;
+  position: absolute;
+  padding: 0.5vw 1vw;
+  width: 15vw;
+}
+.container-options-buttons button {
+  border-radius: 5px;
+  font-size: 1.5vw;
+  margin-bottom: 0.5vw;
+  margin-top: 0.5vw;
+  padding: 0.3vw 0.5vw;
+  text-align: left;
+  width: 100%;
+}
+.container-options-buttons .delete {
+  background-color: #ff4141;
+  border: 2px solid #ff4141;
+  color: white;
+}
+.container-options-buttons .delete:hover {
+  background-color: white;
+  border: 2px solid #ff4141;
+  color: #ff4141;
+}
+.container-options-buttons .edit {
+  background-color: white;
+  border: 2px solid #ff4141;
+  color: #ff4141;
+}
+.container-options-buttons .edit:hover {
+  background-color: #ff4141;
+  color: white;
+}
+.container-options:hover + .container-options-buttons {
+  display: inline;
+}
+.container-options-buttons:hover {
+  display: inline;
+}
+/* Section add button */
+.add-section {
+  position: absolute;
+  bottom: 0%;
+  padding: 1vw;
+  text-align: center;
+  width: 98vw;
+}
+.add-section-button {
+  background-color: #ff4141;
+  border: 2px solid #ff4141;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.7vw;
+  padding: 0.5vw 1vw;
+  width: 50%;
+}
+.add-section-button:hover {
+  background-color: #f82424;
+  border: 2px solid #f82424;
 }
