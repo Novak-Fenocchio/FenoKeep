@@ -241,17 +241,20 @@ nav i {
 }
 /* Notes */
 .notes {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  column-count: 4;
   column-gap: 1vw;
+  column-fill: auto;
   margin: 1vw auto 0vw auto;
+  padding-bottom: 3vw;
   width: 100%;
 }
 .note {
   border: 1px solid #d6d6d6;
   border-radius: 4px;
+  break-inside: avoid;
   color: black;
   margin-bottom: 1vw;
+  page-break-inside: avoid;
   padding: 0.5vw 1vw;
 }
 .note h4 {
@@ -275,10 +278,10 @@ nav i {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 41.75vw;
+  min-height: 41.75vw;
   left: 0;
   margin: 0;
-  position: absolute;
+  position: fixed;
   padding: 2vw;
   top: 0;
   width: 96vw;
@@ -291,7 +294,7 @@ nav i {
 }
 .note-edit .title-edit {
   border: none;
-  background-color: rgb(233, 243, 253);
+  background-color: rgb(255, 255, 255);
   color: #000000;
   display: flex;
   font-size: 1.8vw;
@@ -303,10 +306,9 @@ nav i {
 }
 .note-edit textarea {
   border: none;
-  background-color: rgb(233, 243, 253);
   color: black;
   font-size: 1.5vw;
-  height: 20vh;
+  height: 30vh;
   text-align: left;
   padding: 0.3vw 0.5vw 0.3vw 0.5vw;
   width: 100%;
