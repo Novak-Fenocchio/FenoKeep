@@ -8,8 +8,9 @@
             </div>
 
             <div id="form-add-description" class="input-note">
-                <textarea name="description">Contenido</textarea>
+                <textarea name="description" placeholder="Contenido..."></textarea>
             </div>
+
             <div id="form-add-button" class="container-button">
                 <button type="submit" class="add-button">Añadir</button>
                 <input type="button" id="close-form" class="add-button close-form" value="X">
@@ -23,7 +24,7 @@
         <div class="notes">
 
             {{#each notes}}
-            <div class="note">
+            <div class="note note-main" id="{{_id}}">
                 <div class="">
                     <h4 class="">{{title}}
                         <div class="">
@@ -48,10 +49,31 @@
                         </form> -->
                 </div>
             </div>
+
             {{/each}}
 
-
         </div>
+
+        {{#each notes}}
+
+        <div class="container-main-note-edit" id="edit-note{{_id}}">
+            <div class="note note-edit">
+                <div class="container-note-edit">
+                    <h4 class="">{{title}}</h4>
+                    <textarea>{{description}}</textarea>
+                    <div id="form-add-button-edit" class="container-button ">
+                        <button type="submit" class="add-button">Añadir</button>
+                        <input type="button" id="close-form-edit" class="add-button close-form" value="Cancelar">
+                    </div>
+                    <!-- <form action="notes/delete/{{_id}}?_method=DELETE" method="POST">
+                                    <input type="hidden" name="_method" value='DELETE'>
+                                    <button type="submit">Delete </button>
+                                </form> -->
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
     </div>
 
 </section>
