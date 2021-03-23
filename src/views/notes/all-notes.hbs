@@ -1,62 +1,57 @@
 <section class="section-notes">
     <div class="container-header-notas">
-        <H1>Mis notas</H1>
-        <input type="text" class="buscador" placeholder="Buscar una nota...">
-    </div>
-    <div class="notes">
+        <form class="add-note" id='form-add' action="/notes/new-note" method="POST">
 
-        {{#each notes}}
-        <div class="note">
             <div class="">
-                <h2 class="">{{title}}
-                    <div class="">
-                        <button class="container-options">
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                        </button>
-                        <div class="container-options-buttons">
-                            <form action="notes/delete/{{_id}}?_method=DELETE" method="POST">
-                                <input type="hidden" name="_method" value="DELETE">
-                                <button type="submit" class="delete">Eliminar</button>
-                            </form>
-                            <a href="notes/edit/{{_id}}"> <button type="" class="edit">Editar</button></a>
-                        </div>
-                    </div>
-                </h2>
-                <p>{{description}}</p>
-                <!-- <form action="notes/delete/{{_id}}?_method=DELETE" method="POST">
-                        <input type="hidden" name="_method" value='DELETE'>
-                        <button type="submit">Delete </button>
-                    </form> -->
+                <input type="text" id="form-add-false" name='title' class="" autocomplete="off"
+                    placeholder="Añade una nota...">
             </div>
-        </div>
-        {{/each}}
 
+            <div id="form-add-description" class="input-note">
+                <textarea name="description">Contenido</textarea>
+            </div>
+            <div id="form-add-button" class="container-button">
+                <button type="submit" class="add-button">Añadir</button>
+                <input type="button" id="close-form" class="add-button close-form" value="X">
+            </div>
 
+        </form>
     </div>
+    <div class="container-section-notes">
+        <div class=""></div>
+
+        <div class="notes">
+
+            {{#each notes}}
+            <div class="note">
+                <div class="">
+                    <h4 class="">{{title}}
+                        <div class="">
+                            <button class="container-options">
+                                <i class="fa fa-circle" aria-hidden="true"></i>
+                                <i class="fa fa-circle" aria-hidden="true"></i>
+                                <i class="fa fa-circle" aria-hidden="true"></i>
+                            </button>
+                            <div class="container-options-buttons">
+                                <form action="notes/delete/{{_id}}?_method=DELETE" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="delete">Eliminar</button>
+                                </form>
+                                <a href="notes/edit/{{_id}}"> <button type="" class="edit">Editar</button></a>
+                            </div>
+                        </div>
+                    </h4>
+                    <p>{{description}}</p>
+                    <!-- <form action="notes/delete/{{_id}}?_method=DELETE" method="POST">
+                            <input type="hidden" name="_method" value='DELETE'>
+                            <button type="submit">Delete </button>
+                        </form> -->
+                </div>
+            </div>
+            {{/each}}
+
+
+        </div>
+    </div>
+
 </section>
-
-<section class="add-section">
-    <button class="add-section-button">Añadir nota</button>
-</section>
-
-{{!-- <aside class="aside-main">
-    <h1>Nueva nota</h1>
-
-    <form class="" action="/notes/new-note" method="POST">
-        <div class="">
-            <label for="exampleInputEmail1">Título</label>
-            <input type="text" name='title' class="" placeholder="Titulo...">
-        </div>
-        <div class="input-note">
-            <label for="exampleInputPassword1">Contenido</label>
-            <textarea name="description">Contenido</textarea>
-        </div>
-        <div class="container-button">
-            <a href="/notes/add">
-                <button type="submit" class="">Añadir</button>
-            </a>
-        </div>
-    </form>
-</aside> --}}

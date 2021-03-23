@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;900&display=swap");
+
 *,
 * {
   margin: 0;
@@ -5,47 +7,15 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: all 0.3s;
 }
+body {
+  background-color: rgb(255, 255, 255);
+}
 /* General */
 input[type="text"]:focus,
 textarea:focus {
   outline: none;
 }
-/* Nav */
-nav {
-  background-color: white;
-  border-bottom: 2px solid #c63636;
-  color: #c63636;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.5vw;
-  padding-right: 3vw;
-  padding-left: 3vw;
-  padding-bottom: 0.5vw;
-}
-nav a {
-  color: #c63636;
-  font-weight: bold;
-  text-decoration: none;
-  list-style: none;
-  margin-left: 1vw;
-}
-.nav-titulo {
-  font-weight: lighter;
-  font-size: 2.5vw;
-  padding-top: 0.5vw;
-  padding-bottom: 0.5vw;
-}
-.nav-titulo span {
-  font-weight: bold;
-}
-.nav-items {
-  display: flex;
-  justify-content: space-between;
-  text-align: right;
-  padding: 1vw;
-  padding-top: 1.6vw;
-}
+
 /* Login */
 .container-login {
   display: grid;
@@ -113,121 +83,178 @@ nav a {
   color: #1a2aba;
   text-align: center;
 }
+
+/* Nav */
+nav {
+  background-color: #ffffff;
+  border-bottom: 1px solid #a3a3a3;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5vw;
+  padding: 0.3vw 3vw 0.3vw;
+}
+nav a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  list-style: none;
+  margin-left: 1vw;
+}
+.container-nav {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+.nav-titulo {
+  align-items: center;
+  display: flex;
+  justify-content: baseline;
+  font-weight: lighter;
+  font-size: 2vw;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  width: 17vw;
+}
+.nav-titulo img {
+  width: 15%;
+}
+.nav-titulo span {
+  font-weight: 400;
+  color: #5f6368;
+  margin-left: 0.6vw;
+}
+nav i {
+  color: #5f6368;
+  margin-right: 2vw;
+  font-size: 5vw;
+}
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+  padding: 1vw;
+}
+/* Header notas */
+.container-header-notas {
+  color: white;
+  font-size: 1.7vw;
+  margin: 0.5vw auto 0vw;
+  width: 50%;
+}
+.container-header-notas input[type="text"],
+.container-header-notas textarea {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid white;
+  color: black;
+  font-size: 1.7vw;
+  font-family: "Noto sans JP";
+  padding: 0.2vw 1vw;
+  padding-left: 1vw;
+  width: 95%;
+}
+.container-header-notas input[type="text"]:focus {
+  outline: none;
+}
+.container-button {
+  width: 95%;
+}
+.add-note {
+  background-color: rgb(255, 255, 255);
+  width: 95%;
+  border: 2px solid white;
+  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.057), 0 0px 7.2px rgba(0, 0, 0, 0.075),
+    0 0px 13.6px rgba(0, 0, 0, 0.081), 0 0px 24.3px rgba(0, 0, 0, 0.08),
+    0 0px 45.5px rgba(0, 0, 0, 0.076), 0 0px 109px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  margin: 2vw auto;
+}
+.add-note input::placeholder {
+  font-size: 1.2vw;
+}
+.add-button {
+  background-color: rgb(231, 231, 231);
+  border: 2px solid white;
+  padding: 0.5vw 1vw;
+  width: 125%;
+}
+#form-add-button {
+  display: grid;
+  color: black;
+  grid-template-columns: 80% 20%;
+}
+/* Page notes */
 .section-notes {
+  background-color: white;
   padding: 0.5vw 2vw;
+}
+/* Buscador */
+.container-header-buscador {
+  background-color: #ffffff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.7vw;
+  margin: 0vw auto 0vw;
+  width: 100%;
+}
+.container-header-buscador input[type="text"] {
+  background-color: #f1f3f4;
+  border: 2px solid #f1f3f4;
+  border-radius: 5px;
+  color: white;
+  font-weight: lighter;
+  font-size: 1.7vw;
+  padding: 0.3vw 2vw 0.3vw;
+  margin: auto;
+  width: 100%;
+}
+.container-header-buscador input[type="text"]::placeholder {
+  color: rgb(0, 0, 0);
+  font-weight: lighter;
+}
+.container-header-buscador input[type="text"]:focus {
+  outline: none;
+}
+/* Container notes */
+.container-section-notes {
+  display: grid;
+  grid-template-columns: 20% 80%;
 }
 /* Notes */
 .notes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 1vw;
-  margin: 2vw auto 0vw auto;
-  width: 80%;
+  margin: 1vw auto 0vw auto;
+  width: 100%;
 }
 .note {
-  border: 1px solid #cecece;
-  border-radius: 7px;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  color: black;
   margin-bottom: 1vw;
   padding: 0.5vw 1vw;
 }
-.note h2 {
-  color: #7c0000;
+.note h4 {
+  color: #3a3a3a;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .note p {
-  margin: 1vw 0 1vw;
-}
-
-/* aside main */
-.aside-main {
-  background-color: #eceeff;
-  border-left: 0.3vw solid #1221a8;
-  border-top-left-radius: 10px;
-  height: 90vh;
-  position: absolute;
-  top: 5vh;
-  right: 0%;
-  padding: 1vw 2vw;
-  width: 25vw;
-}
-.aside-main h1 {
-  font-size: 2.5vw;
-  font-weight: lighter;
-  text-align: center;
-}
-.aside-main label {
-  font-size: 1.5vw;
-  font-weight: bold;
-  margin: 1.5vw 0vw 0.7vw;
-}
-.aside-main form input,
-.aside-main form textarea {
-  background-color: #ffffff;
-  border: 2px solid #ffffff;
-  border-radius: 5px;
-  font-size: 1.5vw;
-  padding: 0.5vw 1vw;
-}
-.input-note textarea {
-  height: 30vh;
-}
-.aside-main form div {
-  display: flex;
-  flex-direction: column;
-}
-.aside-main form a {
-  width: 100%;
-}
-.aside-main form a button {
-  background-color: #1a2aba;
-  border: 2px solid #1a2aba;
-  border-radius: 5px;
-  color: white;
-  font-size: 1.2vw;
-  margin-top: 1vw;
-  text-align: center;
-  padding: 0.3vw 1vw;
-  width: 70%;
-}
-.aside-main form button:hover {
-  background-color: #1221a8;
-  border: 2px solid #1221a8;
-  transform: scale(1.1);
-}
-.container-button {
-  text-align: center;
-  align-items: center;
-}
-/* Header notas */
-.container-header-notas {
-  background-color: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.7vw;
-  margin: 0.5vw auto 0vw;
-  width: 90%;
-}
-.container-header-notas input[type="text"] {
-  background-color: #f0f2ff;
-  border: 2px solid #f0f2ff;
-  border-radius: 10px;
-  font-size: 1.7vw;
-  padding: 0;
-  padding-left: 1vw;
-  width: 40%;
-}
-.container-header-notas input[type="text"]:focus {
-  outline: none;
+  color: #3a3a3a;
+  margin: 0vw 0 1vw;
 }
 /* Circulos */
 .container-options {
-  background-color: #ffffff;
-  border: 2px solid #ffffff;
+  background-color: #ffffff00;
+  border: 2px solid #ffffff00;
   border-radius: 5px;
   color: white;
   font-size: 1.2vw;
+  padding-bottom: 1vw;
   width: 100%;
 }
 .container-options:hover {
@@ -235,15 +262,10 @@ nav a {
   border: 2px solid #ffffff;
 }
 .container-options i {
-  color: #ff7373;
-  font-size: 0.7vw;
+  color: rgb(68, 68, 68);
+  font-size: 0.4vw;
 }
-.circulo {
-  background-color: #1a2aba;
-  border-radius: 5px;
-  height: 32px;
-  width: 32px;
-}
+
 .container-options-buttons {
   background-color: #ffffff;
   border: 1px solid rgb(201, 201, 201);
@@ -264,22 +286,22 @@ nav a {
   width: 100%;
 }
 .container-options-buttons .delete {
-  background-color: #ff4141;
-  border: 2px solid #ff4141;
+  background-color: black;
+  border: 2px solid black;
   color: white;
 }
 .container-options-buttons .delete:hover {
   background-color: white;
-  border: 2px solid #ff4141;
-  color: #ff4141;
+  border: 2px solid black;
+  color: black;
 }
 .container-options-buttons .edit {
   background-color: white;
-  border: 2px solid #ff4141;
-  color: #ff4141;
+  border: 2px solid black;
+  color: black;
 }
 .container-options-buttons .edit:hover {
-  background-color: #ff4141;
+  background-color: black;
   color: white;
 }
 .container-options:hover + .container-options-buttons {
@@ -287,25 +309,4 @@ nav a {
 }
 .container-options-buttons:hover {
   display: inline;
-}
-/* Section add button */
-.add-section {
-  position: absolute;
-  bottom: 0%;
-  padding: 1vw;
-  text-align: center;
-  width: 98vw;
-}
-.add-section-button {
-  background-color: #ff4141;
-  border: 2px solid #ff4141;
-  border-radius: 5px;
-  color: white;
-  font-size: 1.7vw;
-  padding: 0.5vw 1vw;
-  width: 50%;
-}
-.add-section-button:hover {
-  background-color: #f82424;
-  border: 2px solid #f82424;
 }
