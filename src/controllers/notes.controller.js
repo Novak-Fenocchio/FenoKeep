@@ -11,9 +11,9 @@ notesCtrl.renderNoteForm = (req, res)=>
 notesCtrl.createNewNote = async (req, res)=>
 {   
     console.log('yesaa');
-    const {title, description} = req.body;
+    const {title, description, category} = req.body;
     console.log(req.user.id);
-    const newNote = new Note({title: title, description: description, user: req.user.id});
+    const newNote = new Note({title: title, description: description, user: req.user.id, category: category});
     await newNote.save();
     res.redirect('/notes'); 
 }
@@ -40,8 +40,8 @@ notesCtrl.renderEditForm = async(req,res)=>
 notesCtrl.updateNote = async(req,res) =>
 {
     console.log(req.body);
-    const {title, description} = req.body;
-    await Note.findByIdAndUpdate(req.params.id, {title: title, description: description})
+    const {title, description, category} = req.body;
+    await Note.findByIdAndUpdate(req.params.id, {title: title, description: description, category: category})
     req.flash('success_msg', 'Note updated successfuly');
     res.redirect('/notes')
 }

@@ -12,6 +12,16 @@
             </div>
 
             <div id="form-add-button" class="container-button">
+                <div class="categorySelector">
+                    <input type="hidden" name="category" id="category" placeholder="category">
+                    <div class="container-categories">
+                        <div id="categoryBlue" class="categorySelectorCircle categoryBlue" arial-label="azul"></div>
+                        <div id="categoryRed" class="categorySelectorCircle categoryRed"></div>
+                        <div id="categoryYellow" class="categorySelectorCircle categoryYellow"></div>
+                        <div id="categoryBlack" class="categorySelectorCircle categoryBlack"></div>
+                        <div id="categoryGreen" class="categorySelectorCircle categoryGreen"></div>
+                    </div>
+                </div>
                 <button type="submit" class="add-button">Añadir</button>
                 <input type="button" id="close-form" class="add-button close-form" value="X">
             </div>
@@ -24,28 +34,30 @@
         <div class="notes">
 
             {{#each notes}}
-            <div class="note note-main" id="{{_id}}">
-                <div class="">
-                    <h4 class="">{{title}}
-                        <div class="">
-                            <button class="container-options">
-                                <i class="fa fa-circle" aria-hidden="true"></i>
-                                <i class="fa fa-circle" aria-hidden="true"></i>
-                                <i class="fa fa-circle" aria-hidden="true"></i>
-                            </button>
-                            <div class="container-options-buttons">
-                                <form action="notes/delete/{{_id}}?_method=DELETE" method="POST">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" class="delete">Eliminar</button>
-                                </form>
+            <div class="">
+                <div class="note note-main {{category}}" id="{{_id}}">
+                    <div class="">
+                        <h4 class="">{{title}}
+                            <div class="">
+                                <button class="container-options">
+                                    <i class="fa fa-circle" aria-hidden="true"></i>
+                                    <i class="fa fa-circle" aria-hidden="true"></i>
+                                    <i class="fa fa-circle" aria-hidden="true"></i>
+                                </button>
+                                <div class="container-options-buttons">
+                                    <form action="notes/delete/{{_id}}?_method=DELETE" method="POST">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="delete">Eliminar</button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                    </h4>
-                    <p>{{description}}</p>
-                    <!-- <form action="notes/delete/{{_id}}?_method=DELETE" method="POST">
-                            <input type="hidden" name="_method" value='DELETE'>
-                            <button type="submit">Delete </button>
-                        </form> -->
+                        </h4>
+                        <p>{{description}}</p>
+                        <!-- <form action="notes/delete/{{_id}}?_method=DELETE" method="POST">
+                                <input type="hidden" name="_method" value='DELETE'>
+                                <button type="submit">Delete </button>
+                            </form> -->
+                    </div>
                 </div>
             </div>
 
@@ -60,13 +72,32 @@
                 <div class="container-note-edit">
 
                     <form action="/notes/edit/{{_id}}?_method=PUT" method="POST">
-                        <input type="hidden" name="_method" value="PUT">
-                        <input type='text' name="title" class="title-edit" value="{{title}}" />
-                        <textarea name="description">{{description}}</textarea>
+                        <div class="padding-form-edit">
+                            <input type="hidden" name="_method" value="PUT">
+                            <input type='text' name="title" class="title-edit" value="{{title}}" />
+                            <textarea name="description">{{description}}</textarea>
+                        </div>
 
                         <div id="form-add-button-edit" class="container-button ">
+                            <div class="categorySelector">
+                                <input type="hidden" class="inputHideEdit" name="category" id="category-edit"
+                                    placeholder="category">
+                                <div class="container-categories">
+                                    <div id="categoryBlue" class="categorySelectorCircle categoryBlue"
+                                        arial-label="azul"></div>
+                                    <div id="categoryRed"
+                                        class="categorySelectorCircle categorySelectorCircleEdit categoryRed"></div>
+                                    <div id="categoryYellow"
+                                        class="categorySelectorCircle categorySelectorCircleEdit categoryYellow"></div>
+                                    <div id="categoryBlack"
+                                        class="categorySelectorCircle categorySelectorCircleEdit categoryBlack"></div>
+                                    <div id="categoryGreen"
+                                        class="categorySelectorCircle categorySelectorCircleEdit categoryGreen"></div>
+                                </div>
+                            </div>
                             <button type="submit" class="add-button">Actualizar</button>
-                            <input type="button" id="close-form-edit" class="add-button close-form" value="Cancelar">
+                            <input type="button" id="close-form-edit" class="add-button close-form-edit"
+                                value="Cancelar">
                         </div>
                     </form>
                 </div>

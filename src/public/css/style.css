@@ -180,12 +180,16 @@ nav i {
 }
 #form-add-button {
   color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 0.3vw 0 0.3vw;
   text-align: right;
 }
 .add-button {
   background-color: #ffbb00;
   border: 2px solid white;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1.5vw;
   padding: 0.5vw 1vw;
   width: 40%;
@@ -201,6 +205,15 @@ nav i {
 .close-form:hover {
   background-color: #be0303;
 }
+.close-form-edit {
+  background-color: #e00303;
+  color: white;
+  width: 25%;
+}
+.close-form-edit:hover {
+  background-color: #be0303;
+}
+
 /* Page notes */
 .section-notes {
   background-color: white;
@@ -252,19 +265,16 @@ nav i {
   border: 1px solid #d6d6d6;
   border-radius: 4px;
   break-inside: avoid;
-  color: black;
   margin-bottom: 1vw;
   page-break-inside: avoid;
   padding: 0.5vw 1vw;
 }
 .note h4 {
-  color: #3a3a3a;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .note p {
-  color: #3a3a3a;
   margin: 0vw 0 1vw;
 }
 /* Note edit */
@@ -289,8 +299,7 @@ nav i {
 .container-note-edit {
   background-color: white;
   border-radius: 5px;
-  padding: 1vw 2vw;
-  width: 40%;
+  width: 50%;
 }
 .note-edit .title-edit {
   border: none;
@@ -313,9 +322,16 @@ nav i {
   padding: 0.3vw 0.5vw 0.3vw 0.5vw;
   width: 100%;
 }
+.padding-form-edit {
+  padding: 1vw 2vw;
+}
 #form-add-button-edit {
   text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 1vw 1vw;
 }
+
 /* Circulos */
 .container-options {
   background-color: #ffffff00;
@@ -378,4 +394,55 @@ nav i {
 }
 .container-options-buttons:hover {
   display: inline;
+}
+/* categories */
+.categorySelector {
+  background-color: rgb(237, 237, 253);
+  border-radius: 10px;
+  color: #a3a3a3;
+  padding: 0.4vw 1vw 0.4vw;
+  width: 25%;
+}
+.categorySelector h5 {
+  color: #a3a3a3;
+  font-weight: 400 !important;
+}
+.container-categories {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.categorySelectorCircle {
+  border: 0.5px solid rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  height: 2vw;
+  width: 2vw;
+}
+.categorySelectorCircle:hover {
+  border: 0.5px solid black;
+}
+.categoryBlue {
+  border-color: rgb(132, 132, 255);
+  background-color: rgb(132, 132, 255);
+  color: black;
+}
+.categoryRed {
+  border-color: rgb(255, 132, 132);
+  background-color: rgb(255, 132, 132);
+  color: black;
+}
+.categoryYellow {
+  border-color: rgb(253, 255, 117);
+  background-color: rgb(253, 255, 117);
+  color: black;
+}
+.categoryBlack {
+  border-color: rgb(31, 31, 31);
+  background-color: rgb(31, 31, 31);
+  color: white !important;
+}
+.categoryGreen {
+  border-color: ;
+  background-color: rgb(8, 226, 92);
+  color: black;
 }
