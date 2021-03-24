@@ -10,7 +10,6 @@ notesCtrl.renderNoteForm = (req, res)=>
 
 notesCtrl.createNewNote = async (req, res)=>
 {   
-    console.log('yesaa');
     const {title, description, category} = req.body;
     console.log(req.user.id);
     const newNote = new Note({title: title, description: description, user: req.user.id, category: category});
@@ -60,5 +59,20 @@ notesCtrl.deleteNote = async (req, res)=>
         res.redirect('/notes')
     }
 }
+
+/* Search note */
+notesCtrl.searchNote = async(req,res)=>
+{
+    const keyWord = req.body.keyWordInput;
+    const noteSearch = await Note.find({title:  {$regex:keyWord}})
+    console.log(keyWord);
+    console.log(noteSearch);
+    res.render('notes/searched-notes', {noteSearch}); 
+
+}
+/*  notesCtrl.renderSearchNote = async(req,res)=>
+{
+    res.render()
+} */
 
 module.exports = notesCtrl;

@@ -20,11 +20,50 @@
 
 <body>
     {{>navigation}}
-
     <div class="container">
         {{>errors}}
         {{>messages}}
-        {{{body}}}
+
+        <section class="section-notes">
+            {{#if user}}
+            <div class="container-header-notas">
+                <form class="add-note" id='form-add' action="/notes/new-note" method="POST">
+
+                    <div class="">
+                        <input type="text" id="form-add-false" name='title' class="" autocomplete="off"
+                            placeholder="Añade una nota...">
+                    </div>
+
+                    <div id="form-add-description" class="input-note">
+                        <textarea name="description" placeholder="Contenido..."></textarea>
+                    </div>
+
+                    <div id="form-add-button" class="container-button">
+                        <div class="categorySelector">
+                            <input type="hidden" name="category" value="categoryWhite" id="category"
+                                placeholder="category">
+                            <div class="container-categories">
+                                <div id="categoryBlue" class="categorySelectorCircle categoryBlue" arial-label="azul">
+                                </div>
+                                <div id="categoryRed" class="categorySelectorCircle categoryRed"></div>
+                                <div id="categoryYellow" class="categorySelectorCircle categoryYellow"></div>
+                                <div id="categoryBlack" class="categorySelectorCircle categoryBlack"></div>
+                                <div id="categoryGreen" class="categorySelectorCircle categoryGreen"></div>
+                                <div id="categoryWhite" class="categorySelectorCircle categoryWhite"></div>
+                            </div>
+                        </div>
+                        <button type="submit" class="add-button">Añadir</button>
+                        <input type="button" id="close-form" class="add-button close-form" value="X">
+                    </div>
+
+                </form>
+            </div>
+            {{/if}}
+            {{{body}}}
+
+
+        </section>
+
     </div>
 
 
@@ -35,9 +74,74 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-    <script src="js/index.js">
+    <script src="js/index.js"></script>
+
+
+    <script>
+        $('#form-add-description').hide();
+        $('#form-add-button').hide();
+        $('#form-add-note').hide();
+        $('.categorySelector').hide();
+
+        $('#form-add-false').on('click', function () {
+            $('#form-add-button').show();
+            $('#form-add-description').show();
+            $('#form-add-note').attr("placeholder", "Titulo");
+            $('.categorySelector').show();
+        });
+
+        $('.close-form').on('click', function () {
+            $('#form-add-description').hide();
+            $('#form-add-button').hide();
+            $('#form-add-note').hide();
+            $('#form-add-false').show();
+            $('.categorySelector').hide();
+        });
+
+        /* Form to edit note */
+        let id = undefined;
+        $('.note-main').on('click', function () {
+            id = this.id;
+            $('#edit-note' + this.id).show();
+            $('.categorySelector').show();
+
+        })
+
+        $('.close-form-edit').on('click', function () {
+            $('#edit-note' + id).hide();
+            $('.categorySelector').hide();
+        })
+
+        /* Edit search */
+        $('.note-main-edit').on('click', function () {
+            id = this.id;
+            $('#edit-note' + this.id).show();
+            $('.categorySelector').show();
+        })
+
+        $('.close-form-edit').on('click', function () {
+            $('#edit-note' + id).hide();
+            $('.categorySelector').hide();
+        })
+
+        /* Selector category */
+        $('.categorySelectorCircle').on('click', function () {
+            $('#category').val(this.id);
+        });
+        $('.categorySelectorCircleEdit').on('click', function () {
+            $('.inputHideEdit').val(this.id);
+        });
+
+        /* Edit search */
+        $('.asd').on('click', function () {
+            id = this.id;
+            $('#edit-note' + this.id).show();
+            $('.categorySelector').show();
+        })
 
     </script>
+
+
     {{!--
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"

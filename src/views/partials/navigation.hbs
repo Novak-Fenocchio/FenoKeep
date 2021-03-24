@@ -5,9 +5,13 @@
         <span class="nav-titulo" href="/"> <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Google_Keep_icon_%282020%29.svg/1200px-Google_Keep_icon_%282020%29.svg.png"
                 alt=""><span>Keep</span></span>
-        <div class="container-header-buscador">
-            <input type="text" class="buscador" placeholder="Buscar una nota...">
-        </div>
+        <form action="/notes/search" method="post">
+            <div class="container-header-buscador">
+                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <input type="text" class="buscador" autocomplete="off" name="keyWordInput"
+                    placeholder="Buscar una nota...">
+            </div>
+        </form>
     </div>
     <div class="nav-items">
         <a class="" href="/users/logout">Cerrar sesión</a>

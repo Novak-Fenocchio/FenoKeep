@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 
-const { renderNoteForm, createNewNote, renderNotes, renderEditForm, updateNote, deleteNote } = require('../controllers/notes.controller');
+const { renderNoteForm, createNewNote, renderNotes, renderEditForm, updateNote, deleteNote, searchNote } = require('../controllers/notes.controller');
 const { isAuthenticated } = require('../helpers/auth');
 
 /* New note */
@@ -18,4 +18,6 @@ router.put('/notes/edit/:id',isAuthenticated, updateNote);
 /* delete note */
 router.delete('/notes/delete/:id', isAuthenticated,deleteNote);
 
+/* Search notes */
+router.post('/notes/search', isAuthenticated, searchNote);
 module.exports = router

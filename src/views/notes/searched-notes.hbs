@@ -1,41 +1,46 @@
 <div class="container-section-notes">
     <div class=""></div>
 
-    <div class="notes">
+    <div class="">
+        <h1>Buscar notas</h1>
+        <div class="notes">
 
-        {{#each notes}}
-        <div class="">
-            <div class="note note-main {{category}}" id="{{_id}}">
-                <div class="">
-                    <h4 class="">{{title}}
-                        <div class="">
-                            <button class="container-options">
-                                <i class="fa fa-circle" aria-hidden="true"></i>
-                                <i class="fa fa-circle" aria-hidden="true"></i>
-                                <i class="fa fa-circle" aria-hidden="true"></i>
-                            </button>
-                            <div class="container-options-buttons">
-                                <form action="notes/delete/{{_id}}?_method=DELETE" method="POST">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" class="delete">Eliminar</button>
-                                </form>
+            {{#each noteSearch}}
+            <div class="">
+                <div class="note note-main note-main-edit {{category}}" id="{{_id}}">
+                    <div class="">
+                        <h4 class="">{{title}}
+                            <div class="">
+                                <button class="container-options">
+                                    <i class="fa fa-circle" aria-hidden="true"></i>
+                                    <i class="fa fa-circle" aria-hidden="true"></i>
+                                    <i class="fa fa-circle" aria-hidden="true"></i>
+                                </button>
+                                <div class="container-options-buttons">
+                                    <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="delete">Eliminar</button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                    </h4>
-                    <p>{{description}}</p>
-                    <!-- <form action="notes/delete/{{_id}}?_method=DELETE" method="POST">
-                                <input type="hidden" name="_method" value='DELETE'>
-                                <button type="submit">Delete </button>
-                            </form> -->
+                        </h4>
+                        <p>{{description}}</p>
+                    </div>
                 </div>
             </div>
+
+            {{/each}}
+
         </div>
 
-        {{/each}}
+        <section class="section-btn-voler">
+            <a href="/notes">
+                <button>Volver</button>
+            </a>
+        </section>
 
     </div>
-
-    {{#each notes}}
+    {{#each noteSearch}}
 
     <div class="container-main-note-edit" id="edit-note{{_id}}">
         <div class="note note-edit">
@@ -74,6 +79,7 @@
                 </form>
             </div>
         </div>
+
     </div>
     {{/each}}
 

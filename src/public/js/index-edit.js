@@ -1,8 +1,7 @@
-/* $('#form-add-description').hide();
+$('#form-add-description').hide();
 $('#form-add-button').hide();
 $('#form-add-note').hide();
 $('.categorySelector').hide(); 
-
 
 $('#form-add-false').on('click', function(){
     $('#form-add-button').show();
@@ -19,6 +18,7 @@ $('.close-form').on('click', function(){
     $('.categorySelector').hide();
 });
 
+/* Form to edit note */
 let id = undefined;
 $('.note-main').on('click', function(){
      id = this.id;
@@ -33,26 +33,25 @@ $('.close-form-edit').on('click', function()
     $('.categorySelector').hide();
 })
 
-$('.asd').on('click', function(){
-   id = this.id;
+/* Edit search */
+$('.note-main-edit').on('click', function(){
+    /* id = this.id;
    $('#edit-note'+this.id).show();
-   $('.categorySelector').show(); 
-   alert('CLICK NOTE ')
+   $('.categorySelector').show(); */
+    alert('AAAA');
 })
-
-
 
 $('.close-form-edit').on('click', function()
 {
    $('#edit-note'+id).hide();
    $('.categorySelector').hide();
 })
-alert('index.js')
+alert('aa')
 
+/* Selector category */
 $('.categorySelectorCircle').on('click', function(){
     $('#category').val(this.id);
 });
 $('.categorySelectorCircleEdit').on('click', function(){
     $('.inputHideEdit').val(this.id);
 });
- */
