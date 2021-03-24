@@ -1,0 +1,74 @@
+@media (max-width: 1000px) {
+  /* Searcher */
+  .add-note {
+    border-radius: 2px;
+    box-shadow: 0 0px 3px rgb(0 0 0 / 6%), 0 0px 7.2px rgb(0 0 0 / 8%),
+      0 0px 13.6px rgb(0 0 0 / 4%), 0 0px 24.3px rgb(0 0 0 / 4%);
+  }
+  .container-header-notas {
+    width: 90%;
+  }
+  .container-header-notas input[type="text"],
+  .container-header-notas textarea {
+    font-size: 3.5vw;
+  }
+  .container-header-notas input[type="text"]::placeholder,
+  .container-header-notas textarea::placeholder {
+    font-size: 3.5vw;
+    font-weight: lighter;
+  }
+  /* Notes */
+  .container-section-notes {
+    display: block;
+  }
+  .notes {
+    column-count: 2;
+    padding: 1vw 2vw;
+    width: 95%;
+  }
+  .note {
+    margin: 2vw 1vw;
+    padding: 1vw 2vw;
+  }
+  .note h4 {
+    font-size: 3vw;
+  }
+  .note p {
+    font-size: 3vw;
+    margin-top: 2vw;
+  }
+  .container-options i {
+    font-size: 1vw;
+  }
+  /* Categories */
+  .categoryBlue {
+    border-color: rgb(132, 132, 255);
+    background-color: rgb(132, 132, 255);
+    color: black;
+  }
+  .categoryRed {
+    border-color: rgb(255, 128, 128);
+    background-color: rgb(255, 128, 128);
+    color: black;
+  }
+  .categoryYellow {
+    border-color: rgb(253, 255, 117);
+    background-color: rgb(253, 255, 117);
+    color: black;
+  }
+  .categoryBlack {
+    border-color: rgb(31, 31, 31);
+    background-color: rgb(31, 31, 31);
+    color: white !important;
+  }
+  .categoryGreen {
+    border-color: rgb(103, 255, 161);
+    background-color: rgb(103, 255, 161);
+    color: black;
+  }
+  .categoryWhite {
+    border: 0.5px solid #eeeeee;
+    background-color: rgb(255, 255, 255);
+    color: black;
+  }
+}
